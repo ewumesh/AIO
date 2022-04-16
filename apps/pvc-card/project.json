@@ -1,0 +1,102 @@
+{
+  "projectType": "application",
+  "root": "apps/pvc-card",
+  "sourceRoot": "apps/pvc-card/src",
+  "prefix": "aio",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/pvc-card",
+        "index": "apps/pvc-card/src/index.html",
+        "main": "apps/pvc-card/src/main.ts",
+        "polyfills": "apps/pvc-card/src/polyfills.ts",
+        "tsConfig": "apps/pvc-card/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/pvc-card/src/favicon.ico",
+          "apps/pvc-card/src/assets"
+        ],
+        "styles": [
+          "apps/pvc-card/src/styles.scss"
+        ],
+        "scripts": [],
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/pvc-card/ngsw-config.json"
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/pvc-card/src/environments/environment.ts",
+              "with": "apps/pvc-card/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "pvc-card:build:production"
+        },
+        "development": {
+          "browserTarget": "pvc-card:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "pvc-card:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/pvc-card/src/**/*.ts",
+          "apps/pvc-card/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/pvc-card"
+      ],
+      "options": {
+        "jestConfig": "apps/pvc-card/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

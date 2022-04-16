@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "pvc-card": "apps/pvc-card",
+    "pvc-card-e2e": "apps/pvc-card-e2e"
+  }
+}

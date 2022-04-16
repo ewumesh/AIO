@@ -1,0 +1,66 @@
+<!-- <div class="tw-daisy-card tw-daisy-bg-base-100 tw-shadow-xl">
+  <div class="tw-daisy-card-body">
+    <h2 class="tw-daisy-card-title">
+      <ng-content select="[card-title]"></ng-content>
+    </h2>
+    <ng-content select="[card-body-content]"></ng-content>
+    <div class="tw-daisy-card-actions tw-daisy-justify-end">
+      <ng-content select="[card-action]"></ng-content>
+    </div>
+  </div>
+</div> -->
+
+<div class="container mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100" *ngFor="let data of userLists; index as i;">
+      <div id="card" style="height:250px; width:400px;border:1px solid #000; border-radius:6px">
+        <div class="header">
+          <div class="left">
+            <img style="height:65px; padding-left:25%; padding-top:5%"
+              src="https://seeklogo.com/images/T/tribhuvan-university-tu-logo-AD67A28902-seeklogo.com.png" />
+          </div>
+          <div class="right">
+            <div style="padding-top:5px;font-weight:bold;color:#1e6091">Tribhuwan University</div>
+            <div style="font-size:14px; color:#1e6091">Central Library</div>
+            <div style="font-size:10px;color:#1e6091">Kirtipur, Kathmandu</div>
+            <div style="font-size:10px">Email:tucl@tucl.org.np, URL:www.tucl.org.np</div>
+            <div style="font-size:10px">Phone:+977-1-4331317, 4331318</div>
+          </div>
+        </div>
+        <div class="divider">
+          PRIVATE
+        </div>
+
+        <div class="main_content">
+          <div class="main_left">
+            <div style="font-size:14px;">Name:{{data.firstname}} {{data.surname}}</div>
+            <div style="font-size:14px;">Address: {{data.address}}</div>
+            <div style="font-size:14px;">Email:{{data.email}}</div>
+            <div style="font-size:14px;">Department: IT</div>
+            <div style="font-size:14px;">Phone:{{data.phone}}</div>
+            <div style="font-size:14px;">Issued on: {{data.updated_on |date}}</div>
+          </div>
+          <div class="main_right">
+            <img style="height:90px; padding-left:25%; padding-top:5%;"
+              src="https://nepalijob.com/wp-content/uploads/2018/12/PP-Size-Photo-246x300.jpg" />
+          </div>
+        </div>
+      </div>
+
+      <!-- <button (click)="generate('test')" >
+  Download
+</button>
+-->
+<button class="link link--primary" (click)="generate(data)">Download</button>
+
+<button class="link link--secondary">Print</button>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="flex flex-row">
+  <div class="basis-1/4">01</div>
+  <div class="basis-1/4">02</div>
+  <div class="basis-1/2">03</div>
+</div> -->

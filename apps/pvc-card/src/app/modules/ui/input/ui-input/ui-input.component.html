@@ -1,0 +1,13 @@
+<div class="tw-daisy-form-control w-full max-w-xs">
+  <label class="tw-daisy-label">
+    <span class="tw-daisy-label-text">{{ label }} </span>
+  </label>
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    class="tw-daisy-input tw-daisy-input-bordered w-full max-w-xs"
+  />
+  <label class="tw-daisy-label" *ngIf="labelAlt">
+    <span class="tw-daisy-label-text-alt">{{ labelAlt }}</span>
+  </label>
+</div>
